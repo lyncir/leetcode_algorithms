@@ -36,3 +36,29 @@ def reverse(x):
 
     return result
         
+
+# 9. Palindrome Number
+def is_palindrome(x):
+    '''
+    :type x: int
+    :trype: bool
+    '''
+    if x < 0:
+        return False
+
+    if x < 10:
+        return True
+
+    s = str(x)
+    if len(s)%2 == 0:
+        left = s[:len(s)/2]
+        right = s[-len(s)/2:]
+    else:
+        left = s[:len(s)/2]
+        right = s[-len(s)/2 + 1:]
+    right = ''.join(reversed(right))
+
+    if left == right:
+        return True
+    else:
+        return False
