@@ -43,3 +43,21 @@ def longest_consecutive_seq(nums):
         ans = max(ans, r - l + 1)
 
     return ans
+
+# 338. Counting Bits
+def count_bits(num):
+    """
+    :type num: int
+    :rtype: list[int]
+    """
+    rets = [0 for i in xrange(num + 1)]
+    pow = 1
+    t = 0
+    for i in xrange(1, num +1):
+        if i == pow:
+            pow *= 2
+            t = 0
+        rets[i] = rets[t] + 1
+        i += 1
+        t += 1
+    return rets
