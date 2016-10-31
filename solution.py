@@ -61,3 +61,29 @@ def count_bits(num):
         i += 1
         t += 1
     return rets
+
+
+# 412. Fizz Buzz
+def fizz_buzz(n):
+    """
+    :type n: int
+    :rtype: list[str]
+    """
+    rets = [str(i) for i in xrange(1, n+1)]
+    for i in xrange(1, n+1):
+        if i % 3 == 0 and i % 5 == 0:
+            rets[i-1] = "FizzBuzz"
+        elif i % 3 == 0:
+            rets[i-1] = "Fizz"
+        elif i % 5 == 0:
+            rets[i-1] = "Buzz"
+    return rets
+
+
+# 344. Reverse String
+def reverse_string(s):
+    """
+    :type s: str
+    :trype: str
+    """
+    return s[::-1]
