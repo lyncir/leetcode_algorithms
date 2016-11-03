@@ -87,3 +87,25 @@ def reverse_string(s):
     :trype: str
     """
     return s[::-1]
+
+# 413. Arithmetic Slices
+def number_of_arithmetic_slices(A):
+    """
+    :type A: list[int]
+    :rtype: int
+    question: when A = [7, 7, 7, 7, 7] return 6? why 3?
+    """
+    size = len(A)
+    if size < 3:
+        return 0
+    ans = cnt = 0
+    delta = A[1] - A[0]
+    for i in range(2, size):
+        if A[i] - A[i-1] == delta:
+            cnt += 1
+            ans += cnt
+        else:
+            delta = A[i] - A[i -1]
+            cnt = 0
+
+    return ans
