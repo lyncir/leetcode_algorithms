@@ -109,3 +109,12 @@ def number_of_arithmetic_slices(A):
             cnt = 0
 
     return ans
+
+
+# 136. Single Number
+def single_number(nums):
+    """
+    :type nums: list[int]
+    :rtype: int
+    """
+    return reduce(lambda x,y: x^y, nums)
