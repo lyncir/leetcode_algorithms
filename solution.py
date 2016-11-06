@@ -109,3 +109,21 @@ def number_of_arithmetic_slices(A):
             cnt = 0
 
     return ans
+
+
+# 406. Queue Reconstruction by Height
+def reconstruct_queue(people):
+    """
+    :type people: list[list[int]]
+    :trype: list[list[int]]
+    """
+    people = sorted(people, key=lambda n: (-n[0], n[1]))
+    res = []
+    for p in people:
+        res.insert(p[1], p)
+    return res
+
+
+if __name__ == '__main__':
+    people = [[7,0], [4,4], [7,1], [5,0], [6,1], [5,2]]
+    print reconstruct_queue(people)
