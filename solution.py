@@ -44,6 +44,7 @@ def longest_consecutive_seq(nums):
 
     return ans
 
+
 # 338. Counting Bits
 def count_bits(num):
     """
@@ -88,6 +89,7 @@ def reverse_string(s):
     """
     return s[::-1]
 
+
 # 413. Arithmetic Slices
 def number_of_arithmetic_slices(A):
     """
@@ -109,6 +111,15 @@ def number_of_arithmetic_slices(A):
             cnt = 0
 
     return ans
+
+
+# 136. Single Number
+def single_number(nums):
+    """
+    :type nums: list[int]
+    :rtype: int
+    """
+    return reduce(lambda x,y: x^y, nums)
 
 
 # 406. Queue Reconstruction by Height
