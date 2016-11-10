@@ -135,6 +135,20 @@ def reconstruct_queue(people):
     return res
 
 
-if __name__ == '__main__':
-    people = [[7,0], [4,4], [7,1], [5,0], [6,1], [5,2]]
-    print reconstruct_queue(people)
+# 371. Sum of Two Integers
+def get_sum(a, b):
+    """
+    :type a: int
+    :type b: int
+    :rtype: int
+    """
+    MAX_INT = 0x7FFFFFFF
+    MIN_INT = 0x80000000
+    MASK = 0x100000000
+
+    while b:
+        ans = a ^ b
+        carry = (a & b) << 1
+        a = ans % MASK
+        b = carry % MASK
+    return a if a <= MAX_INT else ~((a % MIN_INT) ^ MAX_INT)
