@@ -152,3 +152,32 @@ def get_sum(a, b):
         a = ans % MASK
         b = carry % MASK
     return a if a <= MAX_INT else ~((a % MIN_INT) ^ MAX_INT)
+
+
+# 104. Maximum Depth of Binary Tree
+class TreeNode(object):
+    
+    def __init__(self, x, left=None, right=None):
+        self.val = x
+        self.left = left
+        self.right = right
+
+
+def max_depth(root):
+    """
+    :type root: TreeNode
+    :rtype: int
+    """
+    if root == None:
+        return
+
+    queue = []
+    queue.append(root)
+
+    while queue:
+        node = queue.pop()
+        print node.val
+        if node.left != None:
+            queue.append(node.left)
+        if node.right != None:
+            queue.append(node.right)
