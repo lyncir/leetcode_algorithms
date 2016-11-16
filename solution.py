@@ -168,16 +168,13 @@ def max_depth(root):
     :type root: TreeNode
     :rtype: int
     """
-    if root == None:
-        return
+    if root is None:
+        return 0
 
-    queue = []
-    queue.append(root)
+    left_depth = max_depth(root.left)
+    right_depth = max_depth(root.right)
 
-    while queue:
-        node = queue.pop()
-        print node.val
-        if node.left != None:
-            queue.append(node.left)
-        if node.right != None:
-            queue.append(node.right)
+    if left_depth > right_depth:
+        return left_depth + 1
+    else:
+        return right_depth + 1
